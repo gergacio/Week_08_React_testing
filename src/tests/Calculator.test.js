@@ -13,13 +13,13 @@ describe('Calculator', () => {
     container = render(<Calculator/>)
   })
 
-  xit('should change running total on number enter', () => {
+  it('should change running total on number enter', () => {
     const button4 = container.getByTestId('number4');
     const runningTotal = container.getByTestId('running-total');
     fireEvent.click(button4);
     expect(runningTotal.textContent).toEqual('4');
   })
-  xit('should add 1 to 4 and get 5', () => {
+  it('should add 1 to 4 and get 5', () => {
     const button1 = container.getByTestId("number1");
     fireEvent.click(button1);
     const addBtn = container.getByTestId("operator-add");
@@ -31,7 +31,7 @@ describe('Calculator', () => {
     const runningTotal = container.getByTestId("running-total");
     expect(runningTotal.textContent).toEqual("5");
   })
-  xit("should be able to subtract 4 and 7 and get 3", () => {
+  it("should be able to subtract 4 and 7 and get 3", () => {
     const button7 = container.getByTestId("number7");
     fireEvent.click(button7);
     const subtractBtn = container.getByTestId("operator-subtract");
@@ -44,7 +44,7 @@ describe('Calculator', () => {
     expect(runningTotal.textContent).toEqual("3");
   });
 
-  xit("should be able to multiply 3 by 5 and get 15", () => {
+  it("should be able to multiply 3 by 5 and get 15", () => {
     const button3 = container.getByTestId("number3");
     fireEvent.click(button3);
     const multiplyBtn = container.getByTestId("operator-multiply");
@@ -57,7 +57,7 @@ describe('Calculator', () => {
     expect(runningTotal.textContent).toEqual("15");
   });
 
-  xit("should be able to divide 21 by 7 and get 3", () => {
+  it("should be able to divide 21 by 7 and get 3", () => {
     const button2 = container.getByTestId("number2");
     fireEvent.click(button2);
     const button1 = container.getByTestId("number1");
@@ -72,7 +72,7 @@ describe('Calculator', () => {
     expect(runningTotal.textContent).toEqual("3");
   });
 
-  xit("should be able to concatenate multiple number button clicks", () => {
+  it("should be able to concatenate multiple number button clicks", () => {
     const button9 = container.getByTestId("number9");
     fireEvent.click(button9);
     const button0 = container.getByTestId("number0");
@@ -104,7 +104,7 @@ describe('Calculator', () => {
     expect(runningTotal.textContent).toEqual("34");
   });
 
-  xit("should be able to clear the running total without affecting the calculation", () => {
+  it("should be able to clear the running total without affecting the calculation", () => {
     const button9 = container.getByTestId("number9");
     fireEvent.click(button9);
     const button1 = container.getByTestId("number1");
